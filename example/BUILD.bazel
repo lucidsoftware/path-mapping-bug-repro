@@ -1,0 +1,12 @@
+load("@rules_java//java:defs.bzl", "java_binary")
+load("example_rule.bzl", "example_rule")
+
+java_binary(
+    name = "example_worker",
+    srcs = ["Example.java"],
+    main_class = "example.Example",
+)
+
+example_rule(
+    name = "example",
+)

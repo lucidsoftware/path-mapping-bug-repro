@@ -1,0 +1,15 @@
+common --experimental_output_paths=strip
+build --experimental_worker_multiplex_sandboxing
+
+# Uncomment the line below to mitigate the problem. The build will still fail
+# because the worker doesn't do anything, but the worker will actually be run.
+#build --noworker_multiplex
+
+build --worker_sandboxing
+build --verbose_failures
+
+build --javacopt="-source 21 -target 21"
+build --java_language_version="21"
+build --java_runtime_version="remotejdk_21"
+build --tool_java_language_version="21"
+build --tool_java_runtime_version="remotejdk_21"
